@@ -1,0 +1,21 @@
+div.card {
+    width: 300px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.15);
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    padding: 20px;
+}
+div.card h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Recursive', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+div.card h2 ion-icon {
+    font-size: 23px;
+}
