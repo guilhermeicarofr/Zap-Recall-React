@@ -1,4 +1,4 @@
-import "./../style/FlashCard.css"
+import "./style.css"
 
 export default function FlashCard({number, question, answer}) {
     return (
