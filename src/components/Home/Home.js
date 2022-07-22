@@ -1,5 +1,5 @@
-import './style.css'
-import logo from './../../assets/images/logo.png'
+import './style.css';
+import logo from './../../assets/images/logo.png';
 
 export default function Home({setStart}) {
     return (

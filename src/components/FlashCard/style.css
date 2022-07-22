@@ -6,6 +6,7 @@ div.card {
     border-radius: 5px;
     margin-bottom: 25px;
     padding: 20px;
+    position: relative;
 }
 div.card h2 {
     display: flex;
@@ -18,4 +19,56 @@ div.card h2 {
 }
 div.card h2 ion-icon {
     font-size: 23px;
+}
+div.card p {
+    font-family: 'Recursive', sans-serif;
+    font-size: 18px;
+    color: #333333;
+}
+
+
+
+div.card.question {
+    height: 130px;
+}
+div.card.question img {
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    bottom: 6px;
+    right: 15px;
+}
+
+
+
+div.card.answer {
+    height: 130px;
+}
+div.card.answer div.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 6px;
+    left: 0px;
+}
+div.card.answer div.buttons button {
+    width: 85px;
+    height: 37px;
+    margin: 0px 5px;
+    border: solid 1px #FFFFFF;
+    border-radius: 5px;
+    font-family: 'Recursive', sans-serif;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: center;
+}
+div.card.answer div.buttons button:nth-of-type(1) {
+    background-color: #FF3030;    
+}
+div.card.answer div.buttons button:nth-of-type(2) {
+    background-color: #FF922E;    
+}
+div.card.answer div.buttons button:nth-of-type(3) {
+    background-color: #2FBE34;    
 }

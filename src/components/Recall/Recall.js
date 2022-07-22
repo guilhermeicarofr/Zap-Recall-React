@@ -1,4 +1,4 @@
-import './style.css'
+import './style.css';
 
 import FlashCard from './../FlashCard/FlashCard';
 import ProgressBar from './../ProgressBar/ProgressBar';
