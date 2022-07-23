@@ -1,3 +1,4 @@
+//import assets
 import './style.css';
 import logo from './../../assets/images/logo.png';
 

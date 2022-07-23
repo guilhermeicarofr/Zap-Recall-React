@@ -1,30 +1,23 @@
+//import modules
 import React from 'react';
 
+//import assets
 import './style.css';
 import arrowicon from './../../assets/images/arrow.png';
-import zapicon from './../../assets/images/zapicon.png';
-import correcticon from './../../assets/images/correcticon.png';
-import incorrecticon from './../../assets/images/incorrecticon.png';
 
-export default function FlashCard({number, question, answer}) {
-
-    function clickRecall(answer) {
-        setProgress(4);
-        setRecall(answer);
-    }
-    function recallIcon() {
-        if(recall==='zap') {
-            return zapicon;
-        } else if(recall==='correct') {
-            return correcticon;
-        } else if(recall==='incorrect') {
-            return incorrecticon;
-        }
-    }
+export default function FlashCard({number, question, answer, addResultBar, recallIcon}) {
 
     const [progress, setProgress] = React.useState(1);
     const [recall, setRecall] = React.useState('');
 
+    //user button click
+    function clickRecall(userrecall) {
+        setProgress(4);
+        setRecall(userrecall);
+        addResultBar(userrecall);
+    }
+    
+    //flip card stages
     switch(progress) {
         case 1:
             return (
@@ -53,7 +46,7 @@ export default function FlashCard({number, question, answer}) {
         case 4:
             return (
                 <div className='card'>
-                    <h2 className={recall}>Pergunta {number} <img src={recallIcon()} alt=''/></h2>
+                    <h2 className={recall}>Pergunta {number} <img src={recallIcon(recall)} alt=''/></h2>
                 </div>
             );
         default:

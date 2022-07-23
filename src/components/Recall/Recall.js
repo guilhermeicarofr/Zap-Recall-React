@@ -1,57 +1,47 @@
-import './style.css';
+//import modules
+import React from 'react';
 
+//import Components
 import FlashCard from './../FlashCard/FlashCard';
-import ProgressBar from './../ProgressBar/ProgressBar';
+import ResultBar from './../ResultBar/ResultBar';
 
+//import data
+import decks from './../../data/decks.json'
+
+//import assets
+import './style.css';
 import logo from './../../assets/images/logo-small.png'
-
-const deck = 
-    [
-        {
-            question:'O que é JSX?',
-            answer:'Uma extensão de linguagem do JavaScript'
-        },
-        {
-            question:'O React é __',
-            answer:'uma biblioteca JavaScript para construção de interfaces'
-        },
-        {
-            question:'Componentes devem iniciar com __',
-            answer:'letra maiúscula'
-        },
-        {
-            question:' Podemos colocar __ dentro do JSX',
-            answer:'expressões'
-        },
-        {
-            question:'O ReactDOM nos ajuda __',
-            answer:'interagindo com a DOM para colocar componentes React na mesma'
-        },
-        {
-            question:'Usamos o npm para __',
-            answer:'gerenciar os pacotes necessários e suas dependências'
-        },
-        {
-            question:'Usamos props para __',
-            answer:'passar diferentes informações para componentes'
-        },
-        {
-            question:'Usamos estado (state) para __',
-            answer:'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'
-        },
-    ];
-
-
+import zapicon from './../../assets/images/zapicon.png';
+import correcticon from './../../assets/images/correcticon.png';
+import incorrecticon from './../../assets/images/incorrecticon.png';
 
 export default function Recall() {
     
+    //state array user answer recalls
+    const [recalls, setRecalls] = React.useState([]);
+
+    //adds recall to resultbar
+    function addResultBar(userrecall) {
+        setRecalls([...recalls, userrecall]);
+    }
+    //returns correct icon import
+    function recallIcon(userrecall) {
+        if(userrecall==='zap') {
+            return zapicon;
+        } else if(userrecall==='correct') {
+            return correcticon;
+        } else if(userrecall==='incorrect') {
+            return incorrecticon;
+        }
+    }
+
     return (
         <div className='recall'>
             <h1><img src={logo} alt=''/> ZapRecall</h1>
             <div className='deck'>
-                {deck.sort(()=>Math.random() - 0.5).map((q,index)=><FlashCard key={index} number={index+1} question={q.question} answer={q.answer}/>)}
+                {decks.sort(()=>Math.random() - 0.5).map((q,index)=><FlashCard key={index} number={index+1} question={q.question} answer={q.answer} addResultBar={addResultBar} recallIcon={recallIcon} />)}
             </div>
-            <ProgressBar />
+            <ResultBar recalls={recalls} recallIcon={recallIcon} />
         </div>
     );
 }
