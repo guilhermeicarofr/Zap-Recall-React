@@ -7,7 +7,9 @@ import arrowicon from './../../assets/images/arrow.png';
 
 export default function FlashCard({number, question, answer, addResultBar, recallIcon}) {
 
+    //state variable to check card flipping progress
     const [progress, setProgress] = React.useState(1);
+    //state variable to set the card recall state 
     const [recall, setRecall] = React.useState('');
 
     //user button click
