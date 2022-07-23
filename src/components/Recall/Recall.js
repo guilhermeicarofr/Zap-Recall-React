@@ -49,7 +49,7 @@ export default function Recall() {
         <div className='recall'>
             <h1><img src={logo} alt=''/> ZapRecall</h1>
             <div className='deck'>
-                {deck.map((q,index)=><FlashCard number={index+1} question={q.question} answer={q.answer}/>)}
+                {deck.sort(()=>Math.random() - 0.5).map((q,index)=><FlashCard number={index+1} question={q.question} answer={q.answer}/>)}
             </div>
             <ProgressBar />
         </div>
