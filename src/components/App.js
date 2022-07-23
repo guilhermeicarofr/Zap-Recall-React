@@ -1,14 +1,18 @@
+//import modules
 import React from 'react';
 
-import './../assets/style/reset.css';
-import './../assets/style/style.css';
-
+//import Components
 import Home from './Home/Home';
 import Recall from './Recall/Recall';
 
+//import assets
+import './../assets/style/reset.css';
+import './../assets/style/style.css';
+
 export default function App() {
 
-const [start, setStart] = React.useState(false);
+  //state variable to screen change start zaprecall
+  const [start, setStart] = React.useState(false);
 
   if(!start) {
     return (

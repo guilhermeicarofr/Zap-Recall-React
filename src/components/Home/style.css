@@ -1,4 +1,4 @@
-.home {
+div.home {
     width: auto;
     height: 100vh;
     display: flex;
@@ -6,22 +6,22 @@
     align-items: center;
     justify-content: center;
 }
-.home h1 {
+div.home h1 {
     font-family: 'Righteous', regular;
     font-size: 36px;
     color: #FFFFFF;
     margin: 15px 0px 30px 0px;
 }
-.home h2 {
+div.home h2 {
     font-family: 'Recursive', sans-serif;
     font-size: 18px;
     color: #d70900;
 }
-.home img {
+div.home img {
     width: 136px;
     height: 161px;
 }
-.home button {
+div.home button {
     color: #FFFFFF;
     width: 246px;
     height: 54px;
