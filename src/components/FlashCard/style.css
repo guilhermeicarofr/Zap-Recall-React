@@ -85,3 +85,9 @@ div.card h2.zap {
     text-decoration: line-through;
     color: #2FBE34;
 }
+div.card h2.incorrect img,
+div.card h2.correct img,
+div.card h2.zap img {
+    width: 23px;
+    height: 23px;
+}

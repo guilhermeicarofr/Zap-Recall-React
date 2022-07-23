@@ -1,7 +1,10 @@
 import React from 'react';
 
 import './style.css';
-import arrow from './../../assets/images/arrow.png';
+import arrowicon from './../../assets/images/arrow.png';
+import zapicon from './../../assets/images/zapicon.png';
+import correcticon from './../../assets/images/correcticon.png';
+import incorrecticon from './../../assets/images/incorrecticon.png';
 
 export default function FlashCard({number, question, answer}) {
 
@@ -9,9 +12,18 @@ export default function FlashCard({number, question, answer}) {
         setProgress(4);
         setRecall(answer);
     }
+    function recallIcon() {
+        if(recall==='zap') {
+            return zapicon;
+        } else if(recall==='correct') {
+            return correcticon;
+        } else if(recall==='incorrect') {
+            return incorrecticon;
+        }
+    }
 
     const [progress, setProgress] = React.useState(1);
-    const [recall, setRecall] = React.useState("");
+    const [recall, setRecall] = React.useState('');
 
     switch(progress) {
         case 1:
@@ -24,7 +36,7 @@ export default function FlashCard({number, question, answer}) {
             return (
                 <div className='card question'>
                     <p>{question}</p>
-                    <img onClick={()=>setProgress(3)} src={arrow} alt=''/>
+                    <img onClick={()=>setProgress(3)} src={arrowicon} alt=''/>
                 </div>
             );
         case 3:
@@ -32,16 +44,16 @@ export default function FlashCard({number, question, answer}) {
                 <div className='card answer'>
                     <p>{answer}</p>
                     <div className='buttons'>
-                        <button onClick={()=>clickRecall("incorrect")}>Não lembrei</button>
-                        <button onClick={()=>clickRecall("correct")}>Quase não lembrei</button>
-                        <button onClick={()=>clickRecall("zap")}>Zap!</button>
+                        <button onClick={()=>clickRecall('incorrect')}>Não lembrei</button>
+                        <button onClick={()=>clickRecall('correct')}>Quase não lembrei</button>
+                        <button onClick={()=>clickRecall('zap')}>Zap!</button>
                     </div>
                 </div>
             );
         case 4:
             return (
                 <div className='card'>
-                    <h2 className={recall}>Pergunta {number} <img src='' alt=''/></h2>
+                    <h2 className={recall}>Pergunta {number} <img src={recallIcon()} alt=''/></h2>
                 </div>
             );
         default:
