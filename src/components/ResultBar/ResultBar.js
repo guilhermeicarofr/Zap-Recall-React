@@ -6,8 +6,6 @@ export default function ResultBar({recalls, recallIcon}) {
 
 
 
-
-
     return (
         <div className='result-bar'>
             <div>
