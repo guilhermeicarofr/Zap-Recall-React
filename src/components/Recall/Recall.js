@@ -15,7 +15,7 @@ import zapicon from './../../assets/images/zapicon.png';
 import correcticon from './../../assets/images/correcticon.png';
 import incorrecticon from './../../assets/images/incorrecticon.png';
 
-export default function Recall() {
+export default function Recall({setStart}) {
     
     //state array user answer recalls
     const [recalls, setRecalls] = React.useState([]);
@@ -41,7 +41,7 @@ export default function Recall() {
             <div className='deck'>
                 {decks.sort(()=>Math.random() - 0.5).map((q,index)=><FlashCard key={index} number={index+1} question={q.question} answer={q.answer} addResultBar={addResultBar} recallIcon={recallIcon} />)}
             </div>
-            <ResultBar recalls={recalls} recallIcon={recallIcon} />
+            <ResultBar recalls={recalls} recallIcon={recallIcon} setStart={setStart} />
         </div>
     );
 }

@@ -11,7 +11,7 @@ import './../assets/style/style.css';
 
 export default function App() {
 
-  //state variable to screen change start zaprecall
+  //state variable to screen change start and restart zaprecall
   const [start, setStart] = React.useState(false);
 
   if(!start) {
@@ -23,7 +23,7 @@ export default function App() {
   } else {
     return (
       <div className='app'>
-        <Recall />
+        <Recall setStart={setStart} />
       </div>
     );
   }

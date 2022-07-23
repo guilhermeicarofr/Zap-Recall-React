@@ -37,3 +37,14 @@ div.result-bar.finished,
 div.result-bar.finished > div {
     height: 170px;
 }
+
+div.result-bar > div button {
+    width: 165px;
+    height: 30px;
+    background-color: #FB6B6B;
+    border: solid 1px #FB6B6B;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: 'Recursive', sans-serif;
+}

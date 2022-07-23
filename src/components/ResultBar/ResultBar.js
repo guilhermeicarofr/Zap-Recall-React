@@ -6,7 +6,7 @@ import './style.css';
 import happy from './../../assets/images/party.png';
 import sad from './../../assets/images/sad.png';
 
-export default function ResultBar({recalls, recallIcon}) {
+export default function ResultBar({recalls, recallIcon, setStart}) {
 
     //state variable to check results bar progress to end zaprecall
     const [result, setResult] = React.useState('');
@@ -43,6 +43,7 @@ export default function ResultBar({recalls, recallIcon}) {
                         <div>
                             {recalls.map((recall, index) => <img key={index} src={recallIcon(recall)} alt='' />)}
                         </div>
+                        <button onClick={()=>setStart(false)}>REINICIAR RECALL</button>
                     </div>
                 </div>
             );
@@ -56,6 +57,7 @@ export default function ResultBar({recalls, recallIcon}) {
                         <div>
                             {recalls.map((recall, index) => <img key={index} src={recallIcon(recall)} alt='' />)}
                         </div>
+                        <button onClick={()=>setStart(false)}>REINICIAR RECALL</button>
                     </div>
                 </div>
             );
