@@ -13,17 +13,19 @@ export default function App() {
 
   //state variable to screen change start and restart zaprecall
   const [start, setStart] = React.useState(false);
+  //state variable to get de input value of zap goals
+  const [zapgoal, setZapgoal] = React.useState(1);
 
   if(!start) {
     return (
       <div className='app'>
-        <Home setStart={setStart} />
+        <Home setStart={setStart} zapgoal={zapgoal} setZapgoal={setZapgoal} />
       </div>
     );
   } else {
     return (
       <div className='app'>
-        <Recall setStart={setStart} />
+        <Recall setStart={setStart} zapgoal={zapgoal} />
       </div>
     );
   }

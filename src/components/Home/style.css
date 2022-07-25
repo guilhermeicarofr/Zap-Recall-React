@@ -28,3 +28,11 @@ div.home button {
     border: solid 1px #d70900;
     border-radius: 5px;
 }
+div.home input {
+    width: 200px;
+    height: 35px;
+    border: solid 1px #d70900;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}

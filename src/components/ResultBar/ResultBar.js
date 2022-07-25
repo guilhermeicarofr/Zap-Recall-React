@@ -6,14 +6,14 @@ import './style.css';
 import happy from './../../assets/images/party.png';
 import sad from './../../assets/images/sad.png';
 
-export default function ResultBar({recalls, recallIcon, setStart}) {
+export default function ResultBar({recalls, recallIcon, setStart, zapgoal}) {
 
     //state variable to check results bar progress to end zaprecall
     const [result, setResult] = React.useState('');
 
     //checks if result is ready and ok or not ok
     if(recalls.length === 8 && result === '') {
-        if(recalls.filter((item)=>item==='incorrect').length === 0) {
+        if(recalls.filter((item)=>item==='zap').length >= zapgoal) {
             setResult('ok');
         } else {
             setResult('notok');
@@ -38,7 +38,7 @@ export default function ResultBar({recalls, recallIcon, setStart}) {
                 <div className='result-bar finished'>
                     <div>
                         <h3><img src={happy} alt=''/> Parabéns!</h3>
-                        <p>Você não esqueceu de nenhum flashcard!</p>
+                        <p>Você cumpriu a meta de Zaps nos Flashcards!</p>
                         <h2>{recalls.length}/8 CONCLUÍDOS</h2>
                         <div>
                             {recalls.map((recall, index) => <img key={index} src={recallIcon(recall)} alt='' />)}
